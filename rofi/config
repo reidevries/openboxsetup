@@ -1,0 +1,6 @@
+rofi.combi-modi:    drun
+rofi.font:          monospace 16
+rofi.modi:          drun
+rofi.theme:         /home/raeaw/.themes/NightmarePony.rasi
+rofi.hide-scrollbar:true
+rofi.icon-theme:    /home/raeaw/.local/share/icons/Papirus-color/
