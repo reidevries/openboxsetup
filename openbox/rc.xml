@@ -55,7 +55,7 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>Monospace</name>
-      <size>12</size>
+      <size>16</size>
       <!-- font size in points -->
       <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
@@ -64,7 +64,7 @@
     </font>
     <font place="InactiveWindow">
       <name>Monospace</name>
-      <size>12</size>
+      <size>16</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -73,16 +73,16 @@
     </font>
     <font place="MenuHeader">
       <name>Monospace</name>
-      <size>10</size>
+      <size>14</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
       <name>Monospace</name>
-      <size>10</size>
+      <size>14</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -91,13 +91,13 @@
     </font>
     <font place="ActiveOnScreenDisplay">
       <name>Monospace</name>
-      <size>10</size>
+      <size>14</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Monospace</name>
-      <size>10</size>
+      <size>14</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
@@ -169,11 +169,6 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="C-A-Left">
-      <action name="DesktopLeft">
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="W-c">
       <action name="Execute">
         <command>mate-calc</command>
@@ -188,21 +183,6 @@
         </startupnotify>
       </action>
     </keybind>
-    <keybind key="C-A-Right">
-      <action name="DesktopRight">
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Up">
-      <action name="DesktopUp">
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="DesktopDown">
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="S-A-Left">
       <action name="SendToDesktopLeft">
         <wrap>no</wrap>
@@ -214,7 +194,9 @@
       </action>
     </keybind>
     <keybind key="W-1">
-      <action name="Desktop"/>
+      <action name="Desktop">
+        <desktop>1</desktop>
+      </action>
     </keybind>
     <keybind key="W-2">
       <action name="Desktop">
@@ -228,16 +210,19 @@
     </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
+      <action name="Execute">
+        <command>skippy-xd --deactivate-window-picker</command>
+      </action>
     </keybind>
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
     <keybind key="W-grave">
       <action name="Execute">
-        <command>gmrun</command>
+        <command>rofi -show drun -location 1 -width 100 -columns 5 -lines 1</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>gmrun</name>
+          <name>menu</name>
         </startupnotify>
       </action>
     </keybind>
@@ -248,10 +233,10 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>pcmanfm</command>
+        <command>thunar</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>File Manager</name>
+          <name>thunar</name>
         </startupnotify>
       </action>
     </keybind>
@@ -266,16 +251,11 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>lxterminal --geometry=120x40</command>
+        <command>termite -t termite</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>lxterminal</name>
+          <name>termite</name>
         </startupnotify>
-      </action>
-    </keybind>
-    <keybind key="W-q">
-      <action name="Execute">
-        <command>xkill</command>
       </action>
     </keybind>
     <keybind key="W-v">
@@ -285,10 +265,10 @@
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>mousepad</command>
+        <command>xed</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>geany</name>
+          <name>xed</name>
         </startupnotify>
       </action>
     </keybind>
@@ -301,33 +281,19 @@
         </startupnotify>
       </action>
     </keybind>
-    <keybind key="W-l">
-      <action name="Execute">
-        <command>dm-tool lock</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>lock</name>
-        </startupnotify>
-      </action>
-    </keybind>
-    <keybind key="W-x">
-      <action name="Execute">
-        <command>oblogout</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>Logout</name>
-        </startupnotify>
-      </action>
+    <keybind key="A-bracketleft">
+      <action name="PreviousWindow"/>
     </keybind>
     <keybind key="A-Tab">
-      <action name="NextWindow">
-        <raise>yes</raise>
-      </action>
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-bracketright">
+      <action name="NextWindow"/>
     </keybind>
     <keybind key="W-space">
       <action name="ToggleMaximizeFull"/>
     </keybind>
-    <keybind key="A-W-space">
+    <keybind key="C-space">
       <action name="Iconify"/>
     </keybind>
     <keybind key="W-Right">
@@ -341,35 +307,6 @@
     </keybind>
     <keybind key="W-Down">
       <action name="GrowToEdgeSouth"/>
-    </keybind>
-    <keybind key="A-W-Up">
-      <action name="MoveResizeTo">
-        <y>0</y>
-        <height>776</height>
-      </action>
-    </keybind>
-    <keybind key="A-W-Right">
-      <action name="MoveResizeTo">
-        <x>1280</x>
-        <width>1280</width>
-        <height>1552</height>
-      </action>
-    </keybind>
-    <keybind key="A-W-Down">
-      <action name="MoveResizeTo">
-        <y>776</y>
-        <height>776</height>
-      </action>
-    </keybind>
-    <keybind key="A-W-Left">
-      <action name="MoveResizeTo">
-        <x>0</x>
-        <width>1280</width>
-        <height>1552</height>
-      </action>
-    </keybind>
-    <keybind key="W-c">
-      <action name="MoveToCenter"/>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -386,8 +323,11 @@
         <command>pactl -- set-sink-mute 0</command>
       </action>
     </keybind>
-    <keybind key="XF86LaunchA"/>
-    <keybind key="XF86LaunchB"/>
+    <keybind key="LaunchA">
+      <action name="Execute">
+        <command>skippy-xd-runner</command>
+      </action>
+    </keybind>
     <keybind key="XF86KbdBrightnessDown"/>
     <keybind key="XF86KbdBrightnessUp"/>
     <keybind key="XF86AudioPrev"/>

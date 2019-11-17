@@ -2,9 +2,8 @@ sleep 5s && nitrogen --restore &
 compton --config ~/.config/compton.conf -b &
 tint2 &
 conky &
-lxpolkit &
-parcellite &
+libinput-gestures-setup start &
+skippy-xd-runner &
 synclient PalmDetect=0 &
 signal-desktop --start-in-tray &
-sleep 10s && /home/raeaw/SOULSEEK/SoulseekQt-2016-1-17-64bit &
-sleep 10s & kalu
+sleep 10s && soulseek &
