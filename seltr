@@ -1,0 +1,3 @@
+#!/bin/bash
+
+notify-send -u normal "$(myougiden $(xsel -o))"
